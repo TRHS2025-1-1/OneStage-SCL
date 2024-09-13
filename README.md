@@ -1,6 +1,4 @@
-Here's how you can modify your repository's README to include a clear and structured dataset preparation section:
 
----
 
 # OneStage-SCL
 
@@ -17,7 +15,6 @@ To get started with this project, follow the steps below to prepare the dataset:
 First, you need to download all the necessary files. This can be done by running the script located in the `1.Preparation` folder:
 
 ```bash
-cd 1.Preparation
 bash dataset_download.sh
 ```
 
@@ -29,6 +26,44 @@ mv Rename_Evaluation_set/* /path/to/evaluation_dataset_directory/
 ```
 
 Make sure to replace `/path/to/evaluation_dataset_directory/` with the actual path where your evaluation dataset is stored.
+
+Your evaluation dataset directory should have the following structure after this step:
+
+```bash
+/path/to/evaluation_dataset_directory/
+│
+├── fan/
+│   ├── test/
+│   ├── train/
+│
+├── valve/
+│   ├── test/
+│   ├── train/ 
+│
+├── slider/
+│   ├── test/
+│   ├── train/
+│
+├── pump/
+│   ├── test/
+│   ├── train/
+│
+├── Toycar/
+│   ├── test/
+│   ├── train/
+│
+├── Toyconveyor/
+│   ├── test/
+│   ├── train/
+│
+├── fan.csv
+├── valve.csv
+├── slider.csv
+├── pump.csv
+├── toycar.csv
+├── toyconveyor.csv
+└── split.py
+```
 
 ### Step 3: Split the Dataset
 Finally, to prepare the dataset for training and evaluation, run the `split.py` script:
@@ -47,6 +82,4 @@ If you have any questions, suggestions, or would like to discuss potential colla
 
 I sincerely appreciate your interest and eagerly look forward to sharing the full project with you in the near future. Your patience and support mean a lot!
 
----
 
-This section should guide users through the dataset preparation process clearly and efficiently. Let me know if you need further adjustments!
