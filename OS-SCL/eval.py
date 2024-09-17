@@ -87,7 +87,6 @@ def evaluator(net, test_loader, criterion, device, machine, cfg):
     auc = metrics.roc_auc_score(y_truet, y_predt)
     pauc = metrics.roc_auc_score(y_truet, y_predt, max_fpr=0.1)
 
-    # 打印最低AUC的ID
     print("=" * 40)
     print(f"Machine: {machine}")
     print(f"Minimum ID: {min_id}, Minimum AUC: {min_auc:.4f}")
@@ -119,11 +118,9 @@ def main():
             map_location=device))
     net.eval()
 
-    if cfg["fussion"] == 4 or cfg["fussion"] == 5:
-        criterion = ASDLoss().to(device)
-    else:
 
-        criterion = ASDLoss(reduction=False).to(device)
+
+    criterion = ASDLoss(reduction=False).to(device)
 
     data_loaders = {}
     name_list = ['fan', 'pump', 'slider', 'ToyCar', 'ToyConveyor', 'valve']
